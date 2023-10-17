@@ -3,6 +3,7 @@ import esphome.config_validation as cv
 from esphome import pins
 from esphome.components import remote_base
 from esphome.const import CONF_CARRIER_DUTY_PERCENT, CONF_ID, CONF_PIN
+from esphome.core import CORE
 
 CONF_RMT_CHANNEL = "rmt_channel"
 
