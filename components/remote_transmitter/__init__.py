@@ -2,21 +2,21 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome import pins
 from esphome.components import remote_base
-#from esphome.const import CONF_CARRIER_DUTY_PERCENT, CONF_ID, CONF_PIN
-from esphome.const import (
-    CONF_BUFFER_SIZE,
-    CONF_DUMP,
-    CONF_FILTER,
-    CONF_ID,
-    CONF_IDLE,
-    CONF_PIN,
-    CONF_TOLERANCE,
-    CONF_MEMORY_BLOCKS,
-    CONF_CARRIER_DUTY_PERCENT,
-)
-from esphome.core import CORE, TimePeriod
+from esphome.const import CONF_CARRIER_DUTY_PERCENT, CONF_ID, CONF_PIN
+# from esphome.const import (
+#     CONF_BUFFER_SIZE,
+#     CONF_DUMP,
+#     CONF_FILTER,
+#     CONF_ID,
+#     CONF_IDLE,
+#     CONF_PIN,
+#     CONF_TOLERANCE,
+#     CONF_MEMORY_BLOCKS,
+#     CONF_CARRIER_DUTY_PERCENT,
+# )
+# from esphome.core import CORE, TimePeriod
 
-CONF_RMT_CHANNEL = "rmt_channel"
+#CONF_RMT_CHANNEL = "rmt_channel"
 
 AUTO_LOAD = ["remote_base"]
 remote_transmitter_ns = cg.esphome_ns.namespace("remote_transmitter")
@@ -32,7 +32,7 @@ CONFIG_SCHEMA = cv.Schema(
         cv.Required(CONF_CARRIER_DUTY_PERCENT): cv.All(
             cv.percentage_int, cv.Range(min=1, max=100)
         ),
-        cv.Optional(CONF_RMT_CHANNEL, default=0): cv.Range(min=0, max=7),
+        #cv.Optional(CONF_RMT_CHANNEL, default=0): cv.Range(min=0, max=7),
     }
 ).extend(cv.COMPONENT_SCHEMA)
 
@@ -43,4 +43,4 @@ async def to_code(config):
     await cg.register_component(var, config)
 
     cg.add(var.set_carrier_duty_percent(config[CONF_CARRIER_DUTY_PERCENT]))
-    cg.add(var.set_rmt_channel(config[CONF_RMT_CHANNEL]))
+    #cg.add(var.set_rmt_channel(config[CONF_RMT_CHANNEL]))
