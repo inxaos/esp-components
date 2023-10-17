@@ -2,8 +2,19 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome import pins
 from esphome.components import remote_base
-from esphome.const import CONF_CARRIER_DUTY_PERCENT, CONF_ID, CONF_PIN
-from esphome.core import CORE
+#from esphome.const import CONF_CARRIER_DUTY_PERCENT, CONF_ID, CONF_PIN
+from esphome.const import (
+    CONF_BUFFER_SIZE,
+    CONF_DUMP,
+    CONF_FILTER,
+    CONF_ID,
+    CONF_IDLE,
+    CONF_PIN,
+    CONF_TOLERANCE,
+    CONF_MEMORY_BLOCKS,
+    CONF_CARRIER_DUTY_PERCENT,
+)
+from esphome.core import CORE, TimePeriod
 
 CONF_RMT_CHANNEL = "rmt_channel"
 
