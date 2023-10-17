@@ -10,6 +10,7 @@ namespace remote_transmitter {
 static const char *const TAG = "remote_transmitter";
 
 void RemoteTransmitterComponent::setup() {   
+  this->channel_ = 0;
   this->configure_rmt_();
 }
 
@@ -32,8 +33,7 @@ void RemoteTransmitterComponent::dump_config() {
 void RemoteTransmitterComponent::configure_rmt_() {
   rmt_config_t c{};
 
-  //this->channel_ = override_rmt_channel;
-  this->channel_ = 0;
+  //this->channel_ = override_rmt_channel;  
   this->config_rmt(c);
   c.rmt_mode = RMT_MODE_TX;
   c.gpio_num = gpio_num_t(this->pin_->get_pin());
