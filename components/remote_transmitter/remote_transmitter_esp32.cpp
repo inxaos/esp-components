@@ -9,9 +9,8 @@ namespace remote_transmitter {
 
 static const char *const TAG = "remote_transmitter";
 
-void RemoteTransmitterComponent::setup() { 
-  this->channel_ = override_rmt_channel;
-  this->configure_rmt_();   
+void RemoteTransmitterComponent::setup() {   
+  this->configure_rmt_();
 }
 
 void RemoteTransmitterComponent::dump_config() {
