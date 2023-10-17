@@ -10,7 +10,7 @@ namespace remote_transmitter {
 static const char *const TAG = "remote_transmitter";
 
 void RemoteTransmitterComponent::setup() {   
-  this->channel_ = 0;
+  //this->channel_ = 0;
   this->configure_rmt_();
 }
 
